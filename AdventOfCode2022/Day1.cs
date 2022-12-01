@@ -2,14 +2,9 @@
 
 public static class Day1
 {
-    private static string GetInput(int day)
-    {
-        return File.ReadAllText(@$"{day}.txt").Replace("\r", "");
-    }
-
     public static void Run()
     {
-        string input = GetInput(1);
+        string input = 1.GetInputForDay();
         string[] allElves = input.Split("\n\n");
         int[] allCals = allElves
             .Select(elf =>

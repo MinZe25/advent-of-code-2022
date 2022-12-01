@@ -1,11 +1,8 @@
 ﻿namespace AdventOfCode2022;
 
-public abstract class Day
+public static class Day
 {
-    protected string input;
-
-    protected Day(int currentDay)
-    {
-        this.input = File.ReadAllText(@$"{currentDay}.txt").Replace("\r", "");
+    public static string GetInputForDay(this int day){
+        return File.ReadAllText(@$"{day}.txt").Replace("\r", "");
     }
 }
