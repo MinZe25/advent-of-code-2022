@@ -4,7 +4,7 @@ public static class Day1
 {
     public static void Run()
     {
-        string input = 1.GetInputForDay();
+        string input = Day.GetDayInput();
         string[] allElves = input.Split("\n\n");
         int[] allCals = allElves
             .Select(elf =>
