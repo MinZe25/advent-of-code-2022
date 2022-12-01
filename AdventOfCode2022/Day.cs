@@ -10,6 +10,6 @@ public static class Day
         MethodBase mth = new StackTrace().GetFrame(1)!.GetMethod()!;
         string cls = mth.ReflectedType!.Name;
         var day = int.Parse(cls.Replace("Day", ""));
-        return File.ReadAllText(@$"{day}.txt").Replace("\r", "");
+        return File.ReadAllText(@$"inputs/{day}.txt").Replace("\r", "");
     }
 }
