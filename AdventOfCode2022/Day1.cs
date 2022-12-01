@@ -1,14 +1,16 @@
-﻿using System.Reflection;
+﻿namespace AdventOfCode2022;
 
-namespace AdventOfCode2022;
-
-public static class Day01
+public static class Day1
 {
+    private static string GetInput(int day)
+    {
+        return File.ReadAllText(@$"{day}.txt").Replace("\r", "");
+    }
+
     public static void Run()
     {
-        // string path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"Data\Names.txt");
-        string lines = File.ReadAllText(@"01.txt").Replace("\r", "");
-        string[] allElves = lines.Split("\n\n");
+        string input = GetInput(1);
+        string[] allElves = input.Split("\n\n");
         int[] allCals = allElves
             .Select(elf =>
                 elf.Split("\n")
@@ -19,6 +21,6 @@ public static class Day01
         int f2 = allCals[1];
         int f3 = allCals[2];
         Console.WriteLine($"1st problem: {f1}");
-        Console.WriteLine($"2nd problem: {f1+f2+f3}");
+        Console.WriteLine($"2nd problem: {f1 + f2 + f3}");
     }
 }
