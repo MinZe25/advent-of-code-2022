@@ -10,11 +10,9 @@ public static class Day6
         Console.WriteLine($"Part 2 Answer: {FindMessage(input, 14)}");
     }
 
-    private static int FindMessage(string input, int length)
-    {
-        for (var i = 0; i < input.Length; i++)
-            if (input.Substring(i, length).ToCharArray().ToHashSet().Count == length)
-                return i + length;
-        return -1;
-    }
+    private static int FindMessage(string input, int length) =>
+        input
+            .Select((_, i) => (i, input.Substring(i, length).ToCharArray().ToHashSet().Count))
+            .FirstOrDefault((c) => c.Count == length)
+            .i + length;
 }
